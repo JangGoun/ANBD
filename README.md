@@ -53,7 +53,7 @@
 ## **서비스 기능 소개**
 
 ### 로그인
-![](readme/login.gif)
+![](readme/login1.gif)
 
 ### JWT 로그인 구조
 ![](readme/login.png)
@@ -65,16 +65,16 @@
 ![](readme/localstorage.png)
 
 ### 회원가입 / 이메일 인증
-![](readme/singup.gif)
+![](readme/singup1.gif)
 
 ### Redis 이메일 인증 구조
 ![](readme/)
 
 ### 회원정보 수정
-![](readme/update.gif)
+![](readme/update1.gif)
 
 ### Redis 로그아웃
-![](readme/logout.gif)
+![](readme/logout1.gif)
 
 ### Redis 로그아웃 구조
 ![](readme/logout.png)
@@ -83,7 +83,7 @@
 ![](readme/autologout.png)
 
 ### 회원탈퇴
-![](readme/exist.gif)
+![](readme/exist1.gif)
 
 
 ## **프로젝트 발표 영상**
