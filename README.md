@@ -56,10 +56,10 @@
 ![](readme/login1.gif)
 
 ### JWT 로그인 구조
-![](readme/login.png)
+![](readme/login1.png)
 
 ### JWT 엑세스 토큰 재발급
-![](readme/reissue.png)
+![](readme/reissue1.png)
 
 ### Local storage
 ![](readme/localstorage.png)
@@ -73,14 +73,14 @@
 ### 회원정보 수정
 ![](readme/update1.gif)
 
-### Redis 로그아웃
+### 로그아웃
 ![](readme/logout1.gif)
 
 ### Redis 로그아웃 구조
-![](readme/logout.png)
+![](readme/logout1.png)
 
 ### Redis 자동 로그아웃 구조
-![](readme/autologout.png)
+![](readme/autologout1.png)
 
 ### 회원탈퇴
 ![](readme/exist1.gif)
