@@ -65,7 +65,7 @@
 ![](readme/localstorage.png)
 
 ### 회원가입 / 이메일 인증
-![](readme/singup1.gif)
+![](readme/signup1.gif)
 
 ### Redis 이메일 인증 구조
 ![](readme/)
