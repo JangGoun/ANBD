@@ -27,16 +27,19 @@ public class UserController {
     private final UserService userService;
     private final UserInfoService userInfoService;
 
+    // 회원가입
     @PostMapping("/signup")
     public ResponseEntity<UserResponseDTO> signup(@RequestBody UserRequestDTO userRequestDTO){
         return ResponseEntity.ok(userService.signup(userRequestDTO));
     }
 
+    // 로그인
     @PostMapping("/login")
     public ResponseEntity<TokenDTO> login(@RequestBody UserRequestDTO userRequestDTO){
         return ResponseEntity.ok(userService.login(userRequestDTO));
     }
 
+    // 비밀번호 확인
     @PostMapping("/passwordCheck")
     public ResponseEntity<?> passwordCheck(@RequestBody UserRequestDTO userRequestDTO) {
         boolean isValid = userService.verifyPassword(userRequestDTO.getUsername(), userRequestDTO.getPassword());
@@ -48,22 +51,20 @@ public class UserController {
         }
     }
 
+    // 회원정보 수정
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody UserRequestDTO userRequestDTO){
         System.out.println(userRequestDTO.getPassword());
         return ResponseEntity.ok(userService.update(userRequestDTO));
     }
 
+    // 비밀번호 수정
     @PutMapping("/updatePassword")
     public ResponseEntity<?> updatePassword(@RequestBody UserRequestDTO userRequestDTO){
         return ResponseEntity.ok(userService.updatePassword(userRequestDTO));
     }
 
-//    @GetMapping("/info")
-//    public ResponseEntity<UserDTO> getUserInfo() {
-//        return ResponseEntity.ok(UserDTO.toDto(userService.getUser().get()));
-//    }
-
+    // 유저정보 불러오기
     @GetMapping("/info")
     public ResponseEntity<UserDTO> getUserInfo() {
         Optional<User> userOptional = userService.getUser();
@@ -76,6 +77,7 @@ public class UserController {
         return ResponseEntity.ok(userDTO); // 유저 정보가 있을 때 해당 정보를 반환
     }
 
+    // 로그아웃
     @PostMapping("/logout")
     public ResponseEntity<?> logoutUser(@RequestHeader(value = "Authorization") String tokenHeader){
         if (tokenHeader != null && tokenHeader.startsWith("Bearer ")){
@@ -87,6 +89,7 @@ public class UserController {
         }
     }
 
+    // 회원탈퇴
     @DeleteMapping("/deleteUser")
     public ResponseEntity<?> deleteUser(Authentication authentication){
         String userId = authentication.getName();

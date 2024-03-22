@@ -23,6 +23,7 @@ public class MailController {
     private final MailService mailService;
     private final UserRepository userRepository;
 
+    // 이메일 보내기
     @PostMapping("/verification-requests")
     public ResponseEntity sendMessage(@RequestParam("email") String email){
         userService.sendCodeToEmail(email);
@@ -30,6 +31,7 @@ public class MailController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    // 이메일 인증
     @GetMapping("/verifications")
     public ResponseEntity verificationEmail(
             @RequestParam("email") String email,

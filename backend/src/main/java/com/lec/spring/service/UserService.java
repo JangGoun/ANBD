@@ -46,6 +46,7 @@ public class UserService {
     @Value("${spring.mail.auth-code-expiration-millis}")
     private long authCodeExpirationMillis;
 
+    // 회원가입
     @Transactional
     public UserResponseDTO signup(UserRequestDTO userRequestDTO){
 
@@ -61,6 +62,7 @@ public class UserService {
     }
 
 
+    // 로그인
     @Transactional
     public TokenDTO login(UserRequestDTO userRequestDTO){
 
@@ -79,6 +81,7 @@ public class UserService {
         return tokenDTO;
     }
 
+    // 비밀번호 확인
     public boolean verifyPassword(String username, String inputPassword) {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("일치하는 사용자 정보를 찾지 못했습니다."));
@@ -87,6 +90,7 @@ public class UserService {
         return passwordEncoder.matches(inputPassword, user.getPassword());
     }
 
+    // 회원정보 수정
     public UserResponseDTO update(UserRequestDTO userRequestDTO) {
         User user = userRepository.findById(userRequestDTO.getId()).orElseThrow(()->new RuntimeException("you need to update id check"));
 
@@ -103,6 +107,7 @@ public class UserService {
 
     }
 
+    // 비밀번호 수정
     public UserResponseDTO updatePassword(UserRequestDTO userRequestDTO) {
         User user = userRepository.findById(userRequestDTO.getId()).orElseThrow(()->new RuntimeException("you need to update id check"));
 
@@ -116,15 +121,6 @@ public class UserService {
 
         return UserResponseDTO.of(updateUser);
     }
-    // 문제점
-    // 반례 ..   사용자의 로그인 시도시 토큰 발행되는데 2분주기로 변경됨
-                //그러면 발급된 토큰이 갱신시 갱신 하는 동안 사이의 요청 발생시 기존 토큰으로 요청 되어 서버는 인식 불가
-    //  사용자가 회원가입 시도후 서버 타임 기준으로 로그인 시도시 회원정보 못찾음
-    //  고쳐야 할거.   토큰 주기를 최소 15분 이상으로 발행
-    //   리프레쉬 토큰은 엑세스토큰의 1/2 간격으로 발행
-    //  리프레쉬가 동작중에는 엑세스 토큰을 이전값과 새로 발급된 값을 비교해서 다른지 비교
-    // 기존 토큰 <--------> 요청중 <---------> 리프레쉬 발생 ---------- 서버가 받은 토큰은 이전 토큰
-
 
     // 현재 유저 정보 가져오기
     public Optional<User> getUser(){
@@ -133,6 +129,7 @@ public class UserService {
         return SecurityUtil.getCurrentUserId().flatMap(userRepository::findOneWithAuthoritiesByUsername);
     }
 
+    // 로그아웃
     public String logout(String accessToken) {
         // 액세스 토큰에서 사용자 이름 추출
         String username = tokenProvider.getUsernameFromToken(accessToken);
@@ -144,7 +141,7 @@ public class UserService {
         return accessToken;
     }
 
-
+    // 회원탈퇴
     public void deleteUser(String userId) {
         User user = userRepository.findByUsername(userId).orElseThrow(() -> new RuntimeException("유저정보가 없습니다."));
 
@@ -156,7 +153,6 @@ public class UserService {
     }
 
     //이메일 인증
-
     public void sendCodeToEmail(String toEmail) {
         this.checkDuplicatedEmail(toEmail);
         String title = "ANBD 이메일 인증 번호";

@@ -71,34 +71,4 @@ public class ProductImageController {
         }
     }
 
-//    @GetMapping("/product/image")
-//    public ResponseEntity<Resource> showImage(@RequestParam Integer id) {
-//        if (id == null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST); // 400: 잘못된 요청
-//
-//        ProductImage file = productImageService.findByImageId(id);
-//        if (file == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404: 이미지가 데이터베이스에 없음
-//
-//        Path filePath = Paths.get(uploadDir, file.getPhotoName());
-//        if (!Files.exists(filePath)) {
-//            // 파일이 실제로 존재하지 않는 경우
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404: 파일 시스템에 이미지가 없음
-//        }
-//
-//        try {
-//            String mimeType = Files.probeContentType(filePath);
-//            if (mimeType == null) {
-//                mimeType = "application/octet-stream";
-//            }
-//
-//            Resource resource = new InputStreamResource(Files.newInputStream(filePath));
-//
-//            return ResponseEntity.ok()
-//                    .contentType(MediaType.parseMediaType(mimeType))
-//                    .body(resource);
-//
-//        } catch (IOException e) {
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500: 서버 내부 오류
-//        }
-//    }
-
 }
