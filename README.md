@@ -1,4 +1,4 @@
-![](readme/homepage.png)
+![](readme/newhome.png)
 
 # ♻️ **ANBD 소개**
 
@@ -13,17 +13,17 @@
 
 ## 😀 **팀원 소개**
 
-| 팀원  | 역할                          |
-|-----|-----------------------------|
-| 김효은 | 프론트엔드 총괄                    |
-|     | 반응형 웹 UI 구현                 |
-|     | 홈페이지 전체 디자인 구현              |
-| 이종현 | 웹소켓을 이용한 채팅방 구현             |
-|     | 마이페이지, 관리자페이지 구현            |
-| 장고운 | JWT 로그인 구현                  |
-|  |  Redis를 이용한 로그아웃, 이메일 인증 구현 |
+| 팀원  | 역할                         |
+|-----|----------------------------|
+| 김효은 | 프론트엔드 총괄                   |
+|     | 반응형 웹 UI 구현                |
+|     | 홈페이지 전체 디자인 구현             |
+| 이종현 | 웹소켓을 이용한 채팅방 구현            |
+|     | 마이페이지, 관리자페이지 구현           |
+| 장고운 | JWT 로그인 구현, 유저 회원가입 구현     |
+|  | Redis를 이용한 로그아웃, 이메일 인증 구현 |
 | 권희수 | 상품 CRUD 구현                 |
-|  |구글맵API를 이용한 거래장소 구현         |
+|  | 구글맵API를 이용한 거래장소 구현        |
 
 ## 🛠 **기술 스텍**
 ![](readme/skillstack.png)
@@ -41,7 +41,7 @@
 
 
 ## 🔄 **시스템 설계**
-![](readme/systemArchitecture.png)
+![](readme/systemarchitecture.png)
 
 1. 클라이언트 요청: 사용자가 리액트 기반의 웹 애플리케이션에서 어떤 동작(예: 데이터 조회, 데이터 입력)을 요청하면, 리액트 앱은 해당 요청에 해당하는 HTTP 요청을 서버의 API 엔드포인트로 보냅니다.  
 
@@ -52,8 +52,38 @@
 
 ## **서비스 기능 소개**
 
-### JWT 로그인
+### 로그인
+![](readme/login.gif)
+
+### JWT 로그인 구조
+![](readme/login.png)
+
+### JWT 엑세스 토큰 재발급
+![](readme/reissue.png)
+
+### Local storage
+![](readme/localstorage.png)
+
+### 회원가입 / 이메일 인증
+![](readme/singup.gif)
+
+### Redis 이메일 인증 구조
 ![](readme/)
+
+### 회원정보 수정
+![](readme/update.gif)
+
+### Redis 로그아웃
+![](readme/logout.gif)
+
+### Redis 로그아웃 구조
+![](readme/logout.png)
+
+### Redis 자동 로그아웃 구조
+![](readme/autologout.png)
+
+### 회원탈퇴
+![](readme/exist.gif)
 
 
 ## **프로젝트 발표 영상**
