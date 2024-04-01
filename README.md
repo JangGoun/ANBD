@@ -11,7 +11,7 @@
 
 더 나아가 추억의 아나바다 운동을 MZ세대에 알리고 사용자들에게 물건을 재활용하고 다시 활용함으로써 환경 보호에 기여한다는 성취감까지 제공하고자 합니다.
 
-## 🎤 **TRAVEL with 발표 영상**
+## 🎤 **ANBD 발표 영상**
 
 | YuTube URL |  
 https://www.youtube.com/watch?v=54-fBDTxFR8&list=PLedGoSru794_gV9NDzrzhk2PsJGThG23p
@@ -72,9 +72,6 @@ https://www.youtube.com/watch?v=54-fBDTxFR8&list=PLedGoSru794_gV9NDzrzhk2PsJGThG
 
 ### 회원가입 / 이메일 인증
 ![](readme/signup1.gif)
-
-### Redis 이메일 인증 구조
-![](readme/)
 
 ### 회원정보 수정
 ![](readme/update1.gif)
